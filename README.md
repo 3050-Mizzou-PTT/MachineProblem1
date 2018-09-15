@@ -17,7 +17,7 @@ struct Graph
 
 struct Graph* createGraph(int vertices);
 void addEdge(struct Graph* graph, int src, int dest);
-void printGraph(struct Graph* graph);
+void writeGraph(struct Graph* graph);
 
 int main()
 {
@@ -29,7 +29,7 @@ int main()
     addEdge(graph, 2, 4);
     addEdge(graph, 4, 3);
 
-    printGraph(graph);
+    writeGraph(graph);
 
     return 0;
 }
@@ -67,7 +67,7 @@ void addEdge(struct Graph* graph, int src, int dest)
     graph->adjLists[dest] = newNode;
 }
 
-void printGraph(struct Graph* graph)
+void writeGraph(struct Graph* graph)
 {
     int v;
     for (v = 1; v <= graph->numVertices; v++)

@@ -68,6 +68,10 @@ Graph* createGraph(int vertices){
         graph->adjLists[i] = NULL;
 
     return graph;
+    
+    /*On createGraph function, I think the for loop(line 67) should be (i=1;i<=vertices; i++).
+    I think line 64 should be malloc((vertices +1) *sizeof(node*)), but not sure about line 64. */
+
 }
 
 void insertEdge(Graph* graph, int num1, int num2)

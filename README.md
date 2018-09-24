@@ -44,7 +44,6 @@
       fscanf(edges, "%d %d", &num1, &num2);
       while(!feof(edges)){
           insertEdge(newGraph,num1,num2);
-          printf("%d %d\n", num1, num2);
           fscanf(edges, "%d %d", &num1, &num2);
       }
       writeintoGraph(newGraph,output);

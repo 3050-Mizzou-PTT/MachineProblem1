@@ -3,7 +3,7 @@
                    - John Burkin - jtb4dk
                    - Tim Kwon - jk4g2
                    
-      It runs in linear time because
+      It runs in linear time because createGraph takes O(V) time, createNode takes O(1) time, insertEdge takes O(1) time, orderedList function takes O(V + E) time, writeintoGraph takes O(V + E) time as well, freeList takes O(E) time and freeGraph takes O(V + E) meaning that the whole running time is proportional to O(V + E).
    
    
    
@@ -122,10 +122,10 @@ void insertEdge(Graph* newGraph, int num1, int num2){
              temp = temp->next;
          }
          fprintf(output, "\n");
-         freeNode(temp);
+         freeList(temp);
      }
 } 
-void freeNode(node* new){
+void freeList(node* new){
      node* hold;
      while(new != NULL){
          hold = new;
@@ -137,7 +137,7 @@ void freeNode(node* new){
  void freeGraph(Graph* newGraph){
      int i;
      for(i = 0; i < newGraph->vertices; i++){
-         freeNode(newGraph->adj[i]);
+         freeList(newGraph->adj[i]);
      }
      free(newGraph);
  }

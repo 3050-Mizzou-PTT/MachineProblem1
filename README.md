@@ -1,12 +1,10 @@
    /*
-      Contributors - Payton Boekhout - plb4dq
-                   - John Burkin - jtb4dk
-                   - Tim Kwon - jk4g2
+      Contributors - Payton Boekhout - plb4dq - Created the writeintoGraph and orderedList function
+                   - John Burkin - jtb4dk - Created the insertEdge, createGraph, and createNode functions
+                   - Tim Kwon - jk4g2 - Created main, as well as both freeList, and freeGraph functions, also created header file
                    
       It runs in linear time because createGraph takes O(V) time, createNode takes O(1) time, insertEdge takes O(1) time, orderedList function takes O(V + E) time, writeintoGraph takes O(V + E) time as well, freeList takes O(E) time and freeGraph takes O(V + E) meaning that the whole running time is proportional to O(V + E).
-   
-   
-   
+  
    */
    #include <stdio.h>
    #include <stdlib.h>
@@ -24,7 +22,7 @@
   void writeintoGraph(Graph*, FILE*);
   node* createNode(int);
   node* orderedList(Graph*, int);
-  void freeNode(node*);
+  void freeList(node*);
   void freeGraph(Graph*);
   
   int main(int agrc, char** argv){

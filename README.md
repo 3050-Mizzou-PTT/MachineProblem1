@@ -1,3 +1,13 @@
+   /*
+      Contributors - Payton Boekhout - plb4dq
+                   - John Burkin - jtb4dk
+                   - Tim Kwon - jk4g2
+                   
+      It runs in linear time because
+   
+   
+   
+   */
    #include <stdio.h>
    #include <stdlib.h>
    typedef struct nodeStruct{
@@ -47,8 +57,14 @@
  Graph* createGraph(int numofv){
       int i;
       Graph* newGraph = malloc(sizeof(Graph));
+      if(newGraph == NULL){
+         exit(0);
+      }
       newGraph->vertices = numofv;
       newGraph->adj = malloc(numofv * sizeof(node*));
+      if(newGraph->adj == NULL){
+         exit(0);
+      }
       for(i = 0; i < numofv; i++){
           newGraph->adj[i] = NULL;
       }
@@ -57,9 +73,12 @@
   
  node* createNode(int vertex){
      node* new = malloc(sizeof(node));
-      new->vertex = vertex;
-      new->next = NULL;
-      return new;
+     if(new == NULL){
+      exit(0);
+     }
+     new->vertex = vertex;
+     new->next = NULL;
+     return new;
  }
 
 void insertEdge(Graph* newGraph, int num1, int num2){
